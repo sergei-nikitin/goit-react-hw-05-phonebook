@@ -1,0 +1,30 @@
+ul {
+  width: 250px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: aquamarine;
+  list-style: none;
+}
+
+.title {
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+/* .appear {
+  opacity: 0;
+  transform: scale(0.1);
+}
+.appearActive {
+  opacity: 1;
+  transform: scale(1);
+  transform: all 250ms linear;
+} */
