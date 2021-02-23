@@ -73,10 +73,12 @@ class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+      this.setState({ filter: "" });
     }
   }
 
   render() {
+    const { contacts } = this.state;
     const visibleContact = this.getFilterContacts();
     return (
       <div>
@@ -100,7 +102,7 @@ class App extends Component {
           classNames={animation}
         >
           <ContactList
-            contacts={visibleContact}
+            contacts={visibleContact.length > 0 ? visibleContact : contacts}
             onDeleteContact={this.deleteContact}
           />
         </CSSTransition>
